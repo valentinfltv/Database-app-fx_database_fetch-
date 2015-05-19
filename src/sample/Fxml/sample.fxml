@@ -6,26 +6,26 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Controller">
     <children>
       <HBox layoutX="406.0" layoutY="30.0" nodeOrientation="LEFT_TO_RIGHT" spacing="15.0" AnchorPane.rightAnchor="15.0">
          <children>
             <Button layoutX="190.0" layoutY="28.0" mnemonicParsing="false" onAction="#editWindow" text="Add" />
-            <Button layoutX="260.0" layoutY="28.0" mnemonicParsing="false" text="Remove" />
-            <Button layoutX="335.0" layoutY="28.0" mnemonicParsing="false" text="Remove All" />
+            <Button layoutX="260.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleDeletePerson" text="Remove" />
+            <Button fx:id="removeAll" layoutX="335.0" layoutY="28.0" mnemonicParsing="false" onAction="#deleteAll" text="Remove All" />
          </children>
       </HBox>
       <HBox layoutX="15.0" layoutY="75.0" nodeOrientation="LEFT_TO_RIGHT" spacing="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
          <children>
-            <TextField fx:id="infoTextField" layoutX="13.0" layoutY="102.0" prefHeight="25.0" prefWidth="233.0" />
-            <TextField fx:id="phoneTextField" layoutX="259.0" layoutY="102.0">
+            <TextField fx:id="infoTextField" layoutX="13.0" layoutY="102.0" prefHeight="25.0" prefWidth="233.0" promptText="info" />
+            <TextField fx:id="phoneTextField" layoutX="259.0" layoutY="102.0" promptText="phone">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></TextField>
             <Button layoutX="427.0" layoutY="102.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.0" text="Search" />
          </children>
       </HBox>
-        <TableView fx:id="tableUsers" layoutX="15.0" layoutY="108.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="328.0" prefWidth="600.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+        <TableView fx:id="tableUsers" layoutX="15.0" layoutY="108.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="328.0" prefWidth="600.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
             <columns>
                 <!-- Колонки таблицы -->
                 <TableColumn fx:id="idColumn" prefWidth="71.0" text="Id" />
